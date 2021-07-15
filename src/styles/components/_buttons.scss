@@ -30,6 +30,20 @@
   }
 }
 
+.btn-danger {
+  background-color: $danger;
+
+  transition: background-color 0.3s ease;
+
+  &:disabled {
+    background-color: lighten($color: $danger, $amount: 15);
+  }
+
+  &:hover {
+    background-color: darken($color: $danger, $amount: 15);
+  }
+}
+
 .btn-block {
   width: 100%;
 }
