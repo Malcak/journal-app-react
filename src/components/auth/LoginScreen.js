@@ -11,8 +11,8 @@ export const LoginScreen = () => {
   const { loading, msgError } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    email: 'test@gmail.com',
-    password: '123456',
+    email: '',
+    password: '',
   });
 
   const { email, password } = formValues;
@@ -29,13 +29,6 @@ export const LoginScreen = () => {
   };
 
   const isFormValid = () => {
-    if (!validator.isEmail(email)) {
-      dispatch(setError('Email is no valid'));
-      return false;
-    } else if (password.length <= 5) {
-      dispatch(setError('Password should be at least 6 characters'));
-      return false;
-    }
     dispatch(removeError());
     return true;
   };

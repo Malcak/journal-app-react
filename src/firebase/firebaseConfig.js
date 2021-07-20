@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyATrQFCWptgr8ritQPrRSm6VDbCZyzMw1I',
-  authDomain: 'journal-app-malcak.firebaseapp.com',
-  projectId: 'journal-app-malcak',
-  storageBucket: 'journal-app-malcak.appspot.com',
-  messagingSenderId: '1036039822015',
-  appId: '1:1036039822015:web:4adc2b645f4746f76fc40a',
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 
 firebase.initializeApp(firebaseConfig);
