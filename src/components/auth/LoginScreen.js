@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import validator from 'validator';
 import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
-import { removeError, setError } from '../../actions/ui';
+import { removeError } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
