@@ -32,14 +32,7 @@ store.dispatch = jest.fn();
 
 describe('test on <AppRouter /> router', () => {
   test('should call the login if is authenticated', async () => {
-    let user;
-
     await act(async () => {
-      const userCred = await firebase
-        .auth()
-        .signInWithEmailAndPassword('test@gmail.com', '123456');
-      user = userCred.user;
-
       const wrapper = mount(
         <Provider store={store}>
           <MemoryRouter>
@@ -48,8 +41,11 @@ describe('test on <AppRouter /> router', () => {
         </Provider>
       );
 
-      // TODO: check why the useEffect callback is not executed
-      expect(true).toBe(true);
+      const userCred = await firebase
+        .auth()
+        .signInWithEmailAndPassword('test@gmail.com', '123456');
+
+      expect(login).toHaveBeenCalled();
     });
   });
 });
